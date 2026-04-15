@@ -2,7 +2,7 @@
   <img src="docs/images/Crazyracing_Kartrider_(logo).png" alt="CrazyRacing KartRider" width="360">
 </p>
 
-<h1 align="center">KartRider-Tools</h1>
+<h1 align="center">KartRider Tools</h1>
 
 <p align="center">
   Extract and convert <a href="https://en.wikipedia.org/wiki/KartRider">KartRider</a> game assets into production-ready USD scenes.
@@ -10,13 +10,13 @@
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
-  <a href="#installation"><strong>Installation</strong></a> ·
-  <a href="#usage"><strong>Usage</strong></a> ·
-  <a href="#dcc-plugins"><strong>DCC Plugins</strong></a>
+  <a href="#download"><strong>Download</strong></a> ·
+  <a href="#cinema-4d-plugin"><strong>Cinema 4D Plugin</strong></a> ·
+  <a href="#disclaimer"><strong>Disclaimer</strong></a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/python-3.10+-yellow?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/license-Freeware-blue?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/format-USD-green?style=flat-square" alt="USD">
 </p>
 
@@ -26,77 +26,57 @@
 
 ---
 
-Unpack `.rho` game archives, parse the proprietary `.1s` binary format, and produce complete 3D scenes — maps, karts, and characters — with geometry, materials, textures, and animations all in one file.
+Scan and convert CrazyRacing KartRider game assets — unpack `.rho` archives, parse the proprietary `.1s` binary format, and produce complete 3D scenes with geometry, materials, textures, and animations.
 
 ## Features
 
-### Maps
+- **Asset scanning & conversion** — batch scan `.rho` archives and `.1s` model files, convert to USD
+- **Maps** — full scene export including road geometry, scenery, sky dome, decorations, object animations, UV/material animations, and transparency
+- **Characters** — skinned meshes with bone hierarchy, per-action animation export with automatic face texture matching
+- **Karts** — full model hierarchy with per-part animation support
+- **Animation** — all animation types supported: object transform, UV, material, skeletal
+- **Render-ready output** — automatic cleanup of collision volumes, trigger zones, and other non-visual game data
 
-- Complete scene export: road geometry, scenery, sky dome, decorations
-- Object animations with loop support
-- UV / material animations
-- Transparency and alpha channel support
-- Automatic cleanup of non-visual game data (collision volumes, trigger zones, gameplay mechanics) — output is render-ready
-
-### Characters
-
-- Skinned meshes with bone hierarchy and dual-weight skinning
-- Automatic face model alignment — face geometry is correctly positioned without manual adjustment
-
-### Karts
-
-- Full model hierarchy with per-part animation support
-
-### Output
-
-All assets export to USD with complete scene information — geometry, materials, textures, animations, and hierarchy are fully preserved. From USD you can bring your assets into any DCC tool or rendering pipeline.
-
-### GUI & CLI
-
-A desktop GUI application for batch extraction and conversion with asset filtering, progress tracking, and stop control. A CLI is also available for scripting and automation.
+All assets export to USD — from there you can bring them into any DCC tool or rendering pipeline.
 
 ---
 
-## DCC Plugins
+## Download
 
-- **Cinema 4D** — importer plugin with:
-  - Standard renderer material support
-  - Redshift renderer material support
-  - UV animation reconstruction
-  - Alpha channel and transparency handling
-- More DCC plugins planned
+Go to the [**Releases**](https://github.com/nixliuxin/KartRider-Tools/releases) page and download the latest version.
+
+The release package contains:
+
+| File | Description |
+|------|-------------|
+| `KartRider-Tools.exe` | GUI application — double-click to run |
+| `KartRiderTools for Cinema 4D/` | Cinema 4D importer plugin |
+
+No installation required. Just download and run.
 
 ---
 
-## Installation
+## Cinema 4D Plugin
 
-```bash
-pip install -e .
-```
+Currently supports **Cinema 4D 2026** only.
 
-Pre-compiled `RhoLoader.exe` is included. To rebuild (requires .NET 8 SDK):
+### Installation
 
-```bash
-cd vendor/Kartrider-File-Reader
-dotnet build -c Release
-```
+1. Copy the `KartRiderTools for Cinema 4D` folder to your Cinema 4D `plugins` directory:
+   ```
+   C:\Users\<you>\AppData\Roaming\Maxon\Maxon Cinema 4D 2026_<hash>\plugins\
+   ```
+2. Restart Cinema 4D
+3. The plugin appears under **Extensions → KartRider Tools**
 
-## Usage
+### Features
 
-### GUI
-
-```bash
-karttools-gui
-```
-
-### CLI
-
-```bash
-karttools map <map_dir> -f usda --c4d
-karttools map <map_dir> --scale 1.0 --alpha-extract
-karttools model <source_dir>
-karttools anim  <source_dir> -a f01.1s
-```
+- Standard and Redshift renderer material support
+- Diffuse (lit) and Flat (unlit) shading modes with one-click swap
+- UV animation reconstruction
+- Alpha channel and transparency handling
+- Automatic coordinate conversion (Z-up → Y-up)
+- Auto-skip collision bodies and non-visual elements
 
 ---
 
@@ -114,9 +94,15 @@ If any rights holder believes this project infringes on their intellectual prope
 
 ## Acknowledgements
 
-- [Kartrider-File-Reader](https://github.com/xpoi5010/Kartrider-File-Reader) by xpoi5010 — `.rho` archive unpacking, integrated as vendor code in this project
+- [Kartrider-File-Reader](https://github.com/xpoi5010/Kartrider-File-Reader) by xpoi5010 — `.rho` archive unpacking
 - [kartrider_model_1s_to_obj](https://github.com/VT-Tuzki/kartrider_model_1s_to_obj) by VT-Tuzki — early `.1s` model parsing work that inspired the binary format investigation
 - LuoHui666 — discussions that helped solve a key challenge in map scene extraction
+
+## License
+
+Copyright © 2026 nixliuxin. All rights reserved.
+
+This software is provided free of charge for **personal and non-commercial use only**. Redistribution, reverse engineering, and decompilation are prohibited. This software is provided "as is", without warranty of any kind.
 
 ---
 
