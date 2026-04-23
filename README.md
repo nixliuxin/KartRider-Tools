@@ -1,3 +1,9 @@
+<p align="right">
+  <strong>English</strong> ·
+  <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="README.ko.md">한국어</a>
+</p>
+
 <p align="center">
   <img src="docs/images/Crazyracing_Kartrider_(logo).png" alt="CrazyRacing KartRider" width="360">
 </p>
