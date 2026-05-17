@@ -1,6 +1,7 @@
 <p align="right">
   <strong>English</strong> ·
   <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="README.zh-TW.md">繁體中文</a> ·
   <a href="README.ko.md">한국어</a>
 </p>
 
@@ -42,6 +43,7 @@ Scan and convert CrazyRacing KartRider game assets — unpack `.rho` archives, p
 - **Karts** — full model hierarchy with per-part animation support
 - **Animation** — all animation types supported: object transform, UV, material, skeletal
 - **Render-ready output** — automatic cleanup of collision volumes, trigger zones, and other non-visual game data
+- **Multi-language UI** — English, Simplified Chinese, Traditional Chinese, and Korean; asset names (tracks, karts, characters) displayed in your chosen language
 
 All assets export to USD — from there you can bring them into any DCC tool or rendering pipeline.
 
