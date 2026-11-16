@@ -35,6 +35,8 @@
 
 Scan and convert CrazyRacing KartRider game assets — unpack `.rho` archives, parse the proprietary `.1s` binary format, and produce complete 3D scenes with geometry, materials, textures, and animations.
 
+> See the assets in 3D in your browser: [Kart Archive](https://kartarchive.com/?lang=en) shows the art of the 2010 China client in its original garage ([KartRider-Archive](https://github.com/nixliuxin/KartRider-Archive)).
+
 ## Features
 
 - **Asset scanning & conversion** — batch scan `.rho` archives and `.1s` model files, convert to USD

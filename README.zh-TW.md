@@ -35,6 +35,8 @@
 
 掃描並轉換跑跑卡丁車（CrazyRacing KartRider）的遊戲資源 —— 解包 `.rho` 歸檔、解析私有 `.1s` 二進位格式，輸出包含幾何體、材質、貼圖與動畫的完整 3D 場景。
 
+> 想直接在瀏覽器裡看三維效果：[跑跑檔案館](https://kartarchive.com/?lang=zh-TW) 把 2010 年中國版用戶端的美術放進原版車庫裡展示（[KartRider-Archive](https://github.com/nixliuxin/KartRider-Archive)）。
+
 ## 功能特性
 
 - **資源掃描與轉換** — 批次掃描 `.rho` 歸檔與 `.1s` 模型檔案，轉換為 USD
