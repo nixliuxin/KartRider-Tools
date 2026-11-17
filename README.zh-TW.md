@@ -19,6 +19,7 @@
   <a href="#功能特性"><strong>功能特性</strong></a> ·
   <a href="#下載"><strong>下載</strong></a> ·
   <a href="#cinema-4d-外掛"><strong>Cinema 4D 外掛</strong></a> ·
+  <a href="#blender-外掛"><strong>Blender 外掛</strong></a> ·
   <a href="#免責聲明"><strong>免責聲明</strong></a>
 </p>
 
@@ -41,8 +42,8 @@
 
 - **資源掃描與轉換** — 批次掃描 `.rho` 歸檔與 `.1s` 模型檔案，轉換為 USD
 - **地圖** — 完整場景匯出，包括路面幾何、場景物件、天空盒、裝飾、物體動畫、UV/材質動畫與透明度
-- **角色** — 含骨骼層級的蒙皮模型，支援按動作分別匯出動畫並自動匹配表情貼圖
-- **賽車** — 完整模型層級，支援各部件動畫
+- **角色** — 含骨骼層級的蒙皮模型，支援按動作分別匯出動畫並自動匹配表情貼圖；掛點跟隨骨骼
+- **賽車** — 完整模型層級，支援各部件動畫，並帶車手與氣球掛點
 - **動畫** — 支援所有動畫類型：物體變換、UV、材質、骨骼
 - **直接可算圖** — 自動剔除碰撞體、觸發區等非視覺遊戲資料
 - **多語言介面** — 支援英文、簡體中文、繁體中文和韓文；資源名稱（賽道、賽車、角色）以當前語言顯示
@@ -61,6 +62,7 @@
 |------|-----|
 | `KartRider-Tools.exe` | 主程式（GUI），雙擊執行 |
 | `KartRiderTools for Cinema 4D/` | Cinema 4D 匯入外掛 |
+| `KartRiderTools for Blender/` | Blender 匯入外掛 |
 
 無需安裝。下載解壓後直接執行。
 
@@ -87,6 +89,27 @@
 - Alpha 通道與透明度處理
 - 自動座標系轉換（Z-up → Y-up）
 - 自動跳過碰撞體與非視覺元素
+
+---
+
+## Blender 外掛
+
+支援 **Blender 4.2 LTS** 及以上版本，已在 Blender 5.1 上測試。
+
+### 安裝
+
+1. 在 Blender 中開啟 **Edit → Preferences → Add-ons**，選擇 **Install from Disk**，選取 `KartRiderTools for Blender/KartRiderTools_blender.zip`
+2. 勾選啟用 **KartRider Tools**
+3. 面板位於 3D 檢視側欄（按 **N**）的 **KartRider** 分頁
+
+### 功能
+
+- 匯入匯出的 USD 場景，含材質、貼圖與透明度
+- 預設 Flat（無光，與遊戲一致），可一鍵切換到 Diffuse（受光）；Flat 會把 view transform 設為 Standard，顏色與貼圖一致
+- UV、可見性與貼圖淡入淡出動畫
+- 骨骼動畫與物體動畫，可循環
+- 角色掛點跟隨骨骼
+- 材質範本：用一個手調材質替選取物件統一換膚
 
 ---
 

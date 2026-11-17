@@ -19,6 +19,7 @@
   <a href="#features"><strong>Features</strong></a> ·
   <a href="#download"><strong>Download</strong></a> ·
   <a href="#cinema-4d-plugin"><strong>Cinema 4D Plugin</strong></a> ·
+  <a href="#blender-add-on"><strong>Blender Add-on</strong></a> ·
   <a href="#disclaimer"><strong>Disclaimer</strong></a>
 </p>
 
@@ -41,8 +42,8 @@ Scan and convert CrazyRacing KartRider game assets — unpack `.rho` archives, p
 
 - **Asset scanning & conversion** — batch scan `.rho` archives and `.1s` model files, convert to USD
 - **Maps** — full scene export including road geometry, scenery, sky dome, decorations, object animations, UV/material animations, and transparency
-- **Characters** — skinned meshes with bone hierarchy, per-action animation export with automatic face texture matching
-- **Karts** — full model hierarchy with per-part animation support
+- **Characters** — skinned meshes with bone hierarchy, per-action animation export with automatic face texture matching; attachment points follow the bones
+- **Karts** — full model hierarchy with per-part animation support, plus rider and balloon mount points
 - **Animation** — all animation types supported: object transform, UV, material, skeletal
 - **Render-ready output** — automatic cleanup of collision volumes, trigger zones, and other non-visual game data
 - **Multi-language UI** — English, Simplified Chinese, Traditional Chinese, and Korean; asset names (tracks, karts, characters) displayed in your chosen language
@@ -61,6 +62,7 @@ The release package contains:
 |------|-------------|
 | `KartRider-Tools.exe` | GUI application — double-click to run |
 | `KartRiderTools for Cinema 4D/` | Cinema 4D importer plugin |
+| `KartRiderTools for Blender/` | Blender importer add-on |
 
 No installation required. Just download and run.
 
@@ -87,6 +89,27 @@ Currently supports **Cinema 4D 2026** only.
 - Alpha channel and transparency handling
 - Automatic coordinate conversion (Z-up → Y-up)
 - Auto-skip collision bodies and non-visual elements
+
+---
+
+## Blender Add-on
+
+Supports **Blender 4.2 LTS** and later. Tested on Blender 5.1.
+
+### Installation
+
+1. In Blender, open **Edit → Preferences → Add-ons**, choose **Install from Disk** and pick `KartRiderTools for Blender/KartRiderTools_blender.zip`
+2. Enable **KartRider Tools**
+3. The panel appears in the 3D Viewport sidebar (press **N**) under the **KartRider** tab
+
+### Features
+
+- Imports the exported USD scenes with materials, textures and transparency
+- Flat (unlit, as in the game) by default, Diffuse (lit) with one click; Flat sets the view transform to Standard so colors match the textures
+- UV, visibility and texture fade animation
+- Skeletal and object animation, loopable
+- Character attachment points follow the bones
+- Material template: re-skin the selected objects from one hand-made material
 
 ---
 
